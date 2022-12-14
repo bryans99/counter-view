@@ -27,17 +27,14 @@ import {
   LookerExtensionSDK40,
 } from '@looker/extension-sdk'
 import App from './App.vue'
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 
 ;(async () => {
   const extensionSdk = await connectExtensionHost()
-  const sdk40 = LookerExtensionSDK40.createClient(extensionSdk)
-  const result = await sdk40.me()
-  const name = result.ok ? result.value.display_name : 'Unknown'
-  console.log(`Hello ${name}`)
+  const sdk = LookerExtensionSDK40.createClient(extensionSdk)
   const root = document.createElement('div')
   root.id = "app"
   root.style.height = '100%'
   document.body.appendChild(root)
-  createApp(App).mount('#app')
-  })()
+  createApp(App, { extensionSdk, sdk }).mount('#app')
+})()

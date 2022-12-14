@@ -47,18 +47,8 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           reactivityTransform: true,
+          hotReload: process.env.NODE_ENV === 'development',
         },
-      },
-      {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
       },
       {
         test: /\.css$/,
@@ -73,6 +63,10 @@ module.exports = {
         exclude: /node_modules/,
         include: /src/,
         sideEffects: false,
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        type: 'asset/inline',
       },
     ],
   },

@@ -1,14 +1,20 @@
 # Looker Extension Vue Example
 
-THIS IS AN EXPERIMENT AND IS NOT OFFICIALLY (OR UNOFFICIALLY SUPPORTED).
+THIS IS AN EXPERIMENT AND IS NOT OFFICIALLY (OR UNOFFICIALLY) SUPPORTED.
 
-Consider this as a start off point for developing Looker extensions
+Consider this as a starting point for developing Looker extensions
 using the Vue framework.
 
-It loads and runs from a development server.
+## TODO
 
-TODO
+- eslint
+- test
+- typescript
 
-1. Add style support
-2. Add image support
-3. Add a production build (the build works but the result has not been tested).
+## DONE
+
+- Add style support - seems to work.
+- Hot loading
+- Add a production build - tested, seems to work.
+- Add image support - images are inlined. Use judiciously!
+- Code splitting - seems to work

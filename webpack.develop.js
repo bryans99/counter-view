@@ -28,7 +28,7 @@ module.exports = {
   ...commonConfig,
   output: {
     ...commonConfig.output,
-    publicPath: 'http://localhost:8081/',
+    publicPath: 'https://localhost:8080/',
   },
   mode: 'development',
   module: {
@@ -38,6 +38,8 @@ module.exports = {
     webSocketServer: 'sockjs',
     host: 'localhost',
     allowedHosts: 'all',
+    server: {type: 'https'},
+    port: 8080,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
